@@ -1,0 +1,249 @@
+/* Reset & General Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto Serif', Georgia, serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  
+    /* 1. Add your background image path */
+    background-image: url('/images/bg.png');
+  
+    /* 2. Scale and position the image nicely */
+    background-size: cover;       /* Covers the full screen without stretching oddly */
+    background-position: center;  /* Centers the image on screen */
+    background-repeat: no-repeat; /* Prevents the image from tiling */
+    background-attachment: fixed; /* Keeps background stationary during scroll */
+}
+
+
+/* White Profile Card */
+.profile-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 550px;
+  padding: 45px 40px;
+  border-radius: 12px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Titles */
+.title {
+  /* font-family: 'Roboto Serif', Georgia, serif; */
+  color: #81425f;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #81425f;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
+/* Avatar Image */
+.avatar-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #a15277;
+}
+
+/* Bio Text */
+.bio {
+  color: #666666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Button */
+.btn-portfolio {
+  display: inline-block;
+  padding: 12px 35px;
+  border: 2px solid #a15277;
+  color: #a15277;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+}
+
+.btn-portfolio:hover {
+  background-color: #81425f;
+  color: #ffffff;
+}
+
+/* Footer Links */
+.footer-credits {
+  font-size: 0.8rem;
+  color: #999999;
+}
+
+.footer-credits a {
+  color: #888888;
+  text-decoration: underline;
+}
+
+/* Social Links Container (Spaced below button and above credits) */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* Spacing between circle icons */
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+/* Circle Button Base */
+.social-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #81425f;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Icon Images Inside Circles */
+.social-icon img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+/* Hover Effects */
+.social-icon:hover {
+  background-color: #81425f;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 12px #a15277;
+}
+
+/* Subtle icon zoom on hover */
+.social-icon:hover img {
+  transform: scale(1.1);
+  /* Optional: Inverts black/colored SVG icons to white on hover */
+  filter: brightness(0) invert(1); 
+}
+
+/* Styling all links */
+a {
+  font-family: inherit;       /* Forces the link to use the parent/body font */
+  color: #a15277;             /* Link text color */
+  text-decoration: none;      /* Removes default underline (set to 'underline' if preferred) */
+  font-weight: 500;           /* Optional: makes link text slightly bolder */
+  transition: color 0.2s ease;/* Makes color changes smooth on hover */
+}
+
+/* Hover state (when mouse moves over the link) */
+a:hover {
+  color: #428164;             /* Change color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
+
+/* Visited state (optional: after a user clicks the link) */
+a:visited {
+  color: #a15277;             /* Keep same color even after visiting */
+}
+
+/* ==========================================
+   Mobile Responsive Adjustments (< 600px)
+   ========================================== */
+@media (max-width: 600px) {
+  
+  /* 1. Add viewport margin so background image is visible around the edges */
+  body {
+    padding: 16px; /* Prevents card from touching screen edges */
+  }
+
+  /* 2. Compact the white card container */
+  .profile-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 24px 18px; /* Reduced top/bottom and side padding */
+    border-radius: 16px;
+    
+    /* Subtle translucency lets background hint through while keeping text readable */
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px); /* Glassmorphism blur effect */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  /* 3. Scale down titles and text */
+  .title {
+    font-size: 1.6rem;
+    margin-bottom: 4px;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+  }
+
+  /* 4. Smaller Avatar Image */
+  .avatar {
+    width: 90px;
+    height: 90px;
+    border-width: 3px;
+  }
+
+  /* 5. Bio Text Padding & Size */
+  .bio {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  /* 6. Full-Width Button for Easy Tapping */
+  .btn-portfolio {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+
+  /* 7. Tighter Social Links Spacing */
+  .social-links {
+    gap: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .social-icon img {
+    width: 20px;
+    height: 20px;
+  }
+}
