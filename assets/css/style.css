@@ -13,7 +13,7 @@ body {
     align-items: center;
     padding: 20px;
   
-    background-image: url('/images/bg.png');
+    background-image: url('/images/bg.webp');
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
