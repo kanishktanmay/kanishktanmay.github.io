@@ -1,4 +1,7 @@
 function openNav() {
+  // 200px on small screens, 250px on larger screens
+  const sidebarWidth = (window.innerWidth <= 600 || window.innerHeight <= 700) ? "200px" : "250px";
+
   document.getElementById("mySidebar").style.width = "250px";
   document.getElementById("main").style.marginLeft = "250px";
 
