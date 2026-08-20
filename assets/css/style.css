@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Right Grotesk';
+  src: url('../fonts/RightGrotesk-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* General Setup */
 * {
   margin: 0;
@@ -20,6 +27,13 @@ body {
     background-attachment: fixed; 
 }
 
+.sans-text {
+  font-family: 'Right Grotesk', sans-serif;
+  color: #888888;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
 
 /* white profile card */
 .profile-card {
@@ -30,6 +44,18 @@ body {
   border-radius: 12px;
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* On mobile screens (< 600px), fade out when the hide-mobile class is added */
+@media (max-width: 700px) {
+  .profile-card.hide-mobile {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Prevents clicking links on the card while invisible */
+  }
 }
 
 /* titles */
@@ -46,6 +72,12 @@ body {
   font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 25px;
+}
+
+/* Any sort of site message */
+.caution-message {
+  font-family: 'Right Grotesk', sans-serif;
+  color: rgba(255, 255, 255, 0.65);
 }
 
 /* Avatar Image */
@@ -89,6 +121,19 @@ body {
 .btn-portfolio:hover {
   background-color: #81425f;
   color: #ffffff;
+}
+
+.home-button{
+  font-family: 'Right Grotesk', sans-serif;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgba(245, 248, 247, 0.65);
+  border-color: transparent;
+  border-style: solid;
 }
 
 /* Footer Links */
@@ -142,32 +187,121 @@ body {
   box-shadow: 0 5px 12px #a15277;
 }
 
-/* Subtle icon zoom on hover */
+/* subtle icon zoom on hover */
 .social-icon:hover img {
   transform: scale(1.1);
-  /* Optional: Inverts black/colored SVG icons to white on hover */
+  /* inverts svg color */
   filter: brightness(0) invert(1); 
 }
 
-/* Styling all links */
+.home-icon:hover{
+  transform: scale(1.1)
+}
+
+/* all links */
 a {
   font-family: inherit;      
-  color: #a15277;             /* Link text color */
-  text-decoration: none;      /* Removes default underline (set to 'underline' if you want tho) */
-  font-weight: 500;           /* Makes link text slightly bolder */
-  transition: color 0.2s ease;/* Makes color changes smooth on hover */
+  color: #a15277;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
 }
 
-/* Hover state (when mouse moves over the link) */
+/* Hover state*/
 a:hover {
-  color: #428164;             /* Change color on hover */
-  text-decoration: underline; /* Add underline on hover */
+  color: #428164;
+  text-decoration: underline;
 }
 
-/* Visited state (after a user clicks the link) */
+/* Visited state */
 a:visited {
-  color: #a15277;             /* Keep same color even after visiting */
+  color: #a15277;
 }
+
+a.white-link,
+a.white-link:visited {
+  color: #f5f8f7;
+  text-decoration: none;
+}
+
+/* Hover state for white links */
+a.white-link:hover {
+  color: #a15277;
+  text-decoration: none; 
+}
+
+/* specially made this for the home button link </3 */
+a.home-link,
+a.home-link:visited {
+  color: rgba(245, 248, 247, 0.65);
+  text-decoration: none;
+}
+a.home-link:hover {
+  color: rgba(245, 248, 247, 0.65); 
+  text-decoration: none;
+  font-size: larger;
+}
+
+/*Side bar*/
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f5f8f7;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 100px;
+}
+
+/* Sidebar Options */
+.sidebar div {
+  font-family:'Right Grotesk', sans-serif;
+  padding: 8px 8px 8px 30px;
+  font-size: 24px;
+  display: block;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+/* Sidebar close button */
+.sidebar .closebtn {
+  position: absolute;
+  top: 22px;
+  right: 25px;
+}
+
+/* The open button */
+.openbtn {
+  position: fixed;
+  top: 30px;
+  left: 50px;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: transparent;
+  color: #f5f8f7;
+  border-color: transparent;
+  border-style: solid;
+}
+
+#main {
+  transition: margin-left .5s;
+}
+
+/* Copyright Footer */
+.bg-copyright {
+  position: fixed;
+  bottom: 12px;
+  right: 16px;
+  font-size: 0.80rem;
+  color: rgba(245, 248, 247, 0.65); /* semi-transparent */
+  font-family: inherit;
+  z-index: 100;
+  pointer-events: none; /* so it doesn't block clicks on nearby links */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); /* for added contrast */
+}
+/* I will it to bottom-center on mobile screens */
 
 /* ==========================================
    Mobile Responsive Adjustments (< 600px)
@@ -243,4 +377,14 @@ a:visited {
     width: 20px;
     height: 20px;
   }
+
+  .bg-copyright {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 8px;
+    white-space: nowrap;
+  }
+
+
 }
