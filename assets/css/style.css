@@ -10,7 +10,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto Serif', Georgia, serif;
+  font-family: 'Right Grotesk', sans-serif;
 }
 
 body {
@@ -20,27 +20,11 @@ body {
     align-items: center;
     padding: 20px;
   
-    background-image: url('/images/bg.webp');
+    background-image: url('/kanishktanmay.github.io/images/bg.jpg');
     background-size: cover; 
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; 
-}
-
-body.others{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-
-  background-image: url('/images/bg.webp');
-  background-size: cover; 
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; 
-  -webkit-backdrop-filter: blur(8px); /*This is for iOS devices*/
-  backdrop-filter: blur(8px)
 }
 
 .sans-text {
@@ -53,7 +37,7 @@ body.others{
 
 /* white profile card */
 .profile-card {
-  background: #f5f8f7;
+  background: #ffffff;
   width: 100%;
   max-width: 550px;
   padding: 45px 40px;
@@ -69,14 +53,14 @@ body.others{
 /* titles */
 .title {
   /* font-family: 'Roboto Serif', Georgia, serif; */
-  color: #81425f;
+  color: #8fa438;
   font-size: 2.2rem;
   font-weight: 400;
   margin-bottom: 8px;
 }
 
 .subtitle {
-  color: #81425f;
+  color: #8fa438;
   font-size: 1.1rem;
   font-weight: 400;
   margin-bottom: 25px;
@@ -100,7 +84,7 @@ body.others{
   height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid #a15277;
+  border: 5px solid #8fa438;
 }
 
 /* Bio Text */
@@ -115,8 +99,8 @@ body.others{
 .btn-portfolio {
   display: inline-block;
   padding: 12px 35px;
-  border: 2px solid #a15277;
-  color: #a15277;
+  border: 2px solid #8fa438;
+  color: #8fa438;
   text-decoration: none;
   font-weight: 600;
   font-size: 0.85rem;
@@ -127,7 +111,7 @@ body.others{
 }
 
 .btn-portfolio:hover {
-  background-color: #81425f;
+  background-color: #8fa438;
   color: #ffffff;
 }
 
@@ -170,7 +154,7 @@ body.others{
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  border: 2px solid #81425f;
+  border: 2px solid #8fa438;
   background-color: #ffffff;
   display: flex;
   justify-content: center;
@@ -190,9 +174,9 @@ body.others{
 
 /* Hover Effects */
 .social-icon:hover {
-  background-color: #81425f;
+  background-color: #8fa438;
   transform: translateY(-3px);
-  box-shadow: 0 5px 12px #a15277;
+  box-shadow: 0 5px 12px #8fa438;
 }
 
 /* subtle icon zoom on hover */
@@ -209,7 +193,7 @@ body.others{
 /* all links */
 a {
   font-family: inherit;      
-  color: #a15277;
+  color: #8fa438;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.2s ease;
@@ -223,18 +207,18 @@ a:hover {
 
 /* Visited state */
 a:visited {
-  color: #a15277;
+  color: #8fa438;
 }
 
 a.white-link,
 a.white-link:visited {
-  color: #f5f8f7;
+  color: #ffffff;
   text-decoration: none;
 }
 
 /* Hover state for white links */
 a.white-link:hover {
-  color: #a15277;
+  color: #8fa438;
   text-decoration: none; 
 }
 
@@ -257,7 +241,7 @@ a.home-link:hover {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #f5f8f7;
+  background-color: #ffffff;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 100px;
@@ -288,7 +272,7 @@ a.home-link:hover {
   font-size: 25px;
   cursor: pointer;
   background-color: transparent;
-  color: #f5f8f7;
+  color: #ffffff;
   border-color: transparent;
   border-style: solid;
 }
@@ -422,7 +406,7 @@ img.menu-icon {
     font-size: 25px;
     cursor: pointer;
     background-color: transparent;
-    color: #f5f8f7;
+    color: #ffffff;
     border-color: transparent;
     border-style: solid;
   }
@@ -546,7 +530,7 @@ img.menu-icon {
     font-size: 25px;
     cursor: pointer;
     background-color: transparent;
-    color: #f5f8f7;
+    color: #ffffff;
     border-color: transparent;
     border-style: solid;
   }
